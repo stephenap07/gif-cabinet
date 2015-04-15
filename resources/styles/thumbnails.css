@@ -1,0 +1,10 @@
+.comments{
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.comment{
+	list-style: none;
+	padding: 10px;
+	border: 1px solid #e7e7e7;
+}

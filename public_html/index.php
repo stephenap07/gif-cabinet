@@ -3,7 +3,7 @@
 	<head>
 		<title>Group Project Prototype</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
+		<link rel="stylesheet" href="../resources/styles/thumbnails.css">
 		<?php
 		require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
 		?>
@@ -33,7 +33,8 @@
 
 
 			<?php
-			for ($x = 0; $x <= 100; $x++) {
+			for ($x = 0; $x <= 2; $x++) {
+				
 				include(TEMPLATES_PATH . '/thumbnail.php');
 			}
 			?>
