@@ -4,6 +4,7 @@
 	<title>Group Project Prototype</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../resources/styles/application.css">
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<?php
 	require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
 	?>
@@ -42,4 +43,10 @@
 		</div>
 	<section>
 	</body>
+
+	<script>
+		$('.comment-button').click(function(){
+			$(this).parent().next('textarea').toggle();
+		})
+	</script>
 </html>

@@ -5,8 +5,11 @@
 		<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 		<p>
 			<a href="#" class="btn btn-primary" role="button">Resolve</a> 
-			<a href="#" class="btn btn-default" role="button">Comment</a>
+			<button class="btn btn-default comment-button" role="button">Comment</button>
 		</p>
+		<textarea class="comment-area" placeholder='Comment here!'>
+		<?php echo($x); ?>
+		</textarea>
 		<ul class='comments'>
 			<li class='comment'>Comment 1...</li>
 			<li class='comment'> Comment 2.. </li>
