@@ -8,3 +8,8 @@
 	padding: 10px;
 	border: 1px solid #e7e7e7;
 }
+
+.gif-image{
+	display: flex;
+	margin: 0 auto;
+}

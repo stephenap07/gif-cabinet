@@ -3,5 +3,5 @@
 	    <label for="fileToUpload">Select image to upload:</label>
 	    <input type="file" name="fileToUpload" id="fileToUpload">
 	</div>
-	<button class="btn btn-default" type="submit" name="submit">Submit</button>
+	<button class="btn btn-primary" type="submit" name="submit">Submit</button>
 </form>

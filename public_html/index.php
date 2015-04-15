@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Group Project Prototype</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../resources/styles/thumbnails.css">
-		<?php
-		require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
-		?>
+<head>
+	<title>Group Project Prototype</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../resources/styles/application.css">
+	<?php
+	require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+	?>
 
-		<div class="row">
-		   <div class="col-md-6 text-center">
-			   <h1 text-align="center">Gif Cabinet <small><em>Prototype</em></small></h1>
-		   </div>
-		   <div class="col-md-6 text-center">
-			   <img src="<?php echo $config['paths']['resources'] . '/images/cabinet.png' ?>" width="15%" height="15%">
-		   </div>
-		</div>
-		<hr>
-
-	</head>
-
+</head>
 	<body>
+		<section class='page-header'>
+			<div class="row">
+				<div class="col-md-6 text-center">
+					<h1 text-align="center">Gif Cabinet <small><em>Prototype</em></small></h1>
+				</div>
+				<div class="col-md-6 text-center">
+					<img src="<?php echo $config['paths']['resources'] . '/images/cabinet.png' ?>" width="15%" height="15%">
+				</div>
+			</div>
+		</section>
 
+
+	<section class='home-main'>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
@@ -39,5 +40,6 @@
 			}
 			?>
 		</div>
+	<section>
 	</body>
 </html>

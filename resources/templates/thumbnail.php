@@ -1,5 +1,5 @@
 <div class="img-responsive img-thumbnail col-sm-12 col-md-4">
-	<img src="../resources/images/1407801019670.gif">
+	<img class='gif-image' src="../resources/images/1407801019670.gif">
 	<div class="caption">
 		<h3> GIF Label </h3>
 		<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
