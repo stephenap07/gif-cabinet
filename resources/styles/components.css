@@ -1,0 +1,22 @@
+form {
+	margin: 30px 30px 30px 0px;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: "Helvetica";
+}
+
+nav div a{
+	float: right;
+	margin-top: 5px;
+}
+
+nav div strong{
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+.gif-filter{
+	width: 40%;
+	margin: 0 auto;
+}

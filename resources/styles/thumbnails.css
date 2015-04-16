@@ -1,0 +1,32 @@
+.img-thumbnail{
+	border: 5px solid #e7e7e7;
+	border-radius: 7px;
+}
+
+.caption{
+	max-width: 80%;
+	margin: 0 auto;
+}
+.comments{
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.comment{
+	list-style: none;
+	padding: 10px;
+	border: 1px solid #e7e7e7;
+}
+
+.gif-image{
+	display: flex;
+	margin: 0 auto;
+}
+
+.comment-form{
+	display: none;
+}
+
+.gif-row{
+	margin: 5px;
+}
