@@ -67,14 +67,15 @@
 			<div class='gifs'>
 				<?php
 				$numInRow = 0;
-				for ($x = 0; $x <= 5; $x++) {
+				$max = 6;
+				for ($x = 0; $x <= $max; $x++) {
 					if ($numInRow == 0){
 						echo("<div class='container-fluid'>");
 						echo("<div class='row gif-row'>");
 					}
 					include(TEMPLATES_PATH . '/thumbnail.php');
 					$numInRow++;
-					if ($numInRow == 3){
+					if ($numInRow == 3 || $x == $max){
 						echo("</div>");
 						echo("</div>");
 						$numInRow = 0;
