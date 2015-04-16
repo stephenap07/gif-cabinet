@@ -11,7 +11,13 @@
 
 </head>
 <body>
-	<section class='page-header'>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	  	<strong><i> GC </i></strong>
+    	<a href='#' class='btn btn-primary'>Sign In</a>
+	  </div>
+	</nav>
+	<section class='page-header container-fluid'>
 		<div class="row">
 			<div class="col-md-6 text-center">
 				<h1 text-align="center">Gif Cabinet <small><em>Prototype</em></small></h1>
