@@ -1,7 +1,7 @@
 <div class="img-responsive img-thumbnail col-sm-12 col-md-4">
 	<img class='gif-image' src="../resources/images/1407801019670.gif">
 	<div class="caption">
-		<h3> GIF Label </h3>
+		<h3> GIF Label  <small>&bull; Category</small></h3>
 		<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 		<p>
 			<a href="#" class="btn btn-primary" role="button">Resolve</a> 
@@ -11,10 +11,10 @@
 			<div class='comment-box'>
 				<textarea placeholder='Comment here!'>
 				</textarea>
-				<a href='#' class='cancel-comment'>x</a>
 			</div>
 			<div>
-				<button type='submit' class='btn btn-default'>Add Comment</button>
+				<button type='submit' class='btn btn-primary'>Add Comment</button>
+				<button class='btn btn-default cancel-comment'>Cancel</button>
 			</div>
 		</form>
 		<ul class='comments'>
