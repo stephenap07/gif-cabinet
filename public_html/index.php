@@ -55,9 +55,19 @@
 
 
 			<?php
+			$numInRow = 0;
 			for ($x = 0; $x <= 5; $x++) {
-				
+				if ($numInRow == 0){
+					echo("<div class='container-fluid'>");
+					echo("<div class='row gif-row'>");
+				}
 				include(TEMPLATES_PATH . '/thumbnail.php');
+				$numInRow++;
+				if ($numInRow == 3){
+					echo("</div>");
+					echo("</div>");
+					$numInRow = 0;
+				}
 			}
 			?>
 		</div>

@@ -18,9 +18,6 @@
 	display: none;
 }
 
-.comment-box{
-	position: relative;
-}
-.comment-box a{
-	top: 0;
+.gif-row{
+	margin: 10px;
 }
