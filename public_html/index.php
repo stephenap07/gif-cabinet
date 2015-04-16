@@ -55,7 +55,7 @@
 
 
 			<?php
-			for ($x = 0; $x <= 2; $x++) {
+			for ($x = 0; $x <= 5; $x++) {
 				
 				include(TEMPLATES_PATH . '/thumbnail.php');
 			}
@@ -64,9 +64,6 @@
 		<section>
 		</body>
 
-		<script>
-			$('.comment-button').click(function(){
-				$(this).parent().next('textarea').toggle();
-			})
-		</script>
+		<script src='../resources/scripts/thumbnails.js'></script>
+
 		</html>

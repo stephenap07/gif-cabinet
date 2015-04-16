@@ -12,5 +12,6 @@ nav div a{
 }
 
 nav div strong{
+	margin-top: 5px;
 	font-size: 20px;
 }

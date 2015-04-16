@@ -7,9 +7,16 @@
 			<a href="#" class="btn btn-primary" role="button">Resolve</a> 
 			<button class="btn btn-default comment-button" role="button">Comment</button>
 		</p>
-		<textarea class="comment-area" placeholder='Comment here!'>
-		<?php echo($x); ?>
-		</textarea>
+		<form action='#' class='comment-form'>
+			<div class='comment-box'>
+				<textarea placeholder='Comment here!'>
+				</textarea>
+				<a href='#' class='cancel-comment'>x</a>
+			</div>
+			<div>
+				<button type='submit' class='btn btn-default'>Add Comment</button>
+			</div>
+		</form>
 		<ul class='comments'>
 			<li class='comment'>Comment 1...</li>
 			<li class='comment'> Comment 2.. </li>

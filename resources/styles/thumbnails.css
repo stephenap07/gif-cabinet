@@ -14,6 +14,13 @@
 	margin: 0 auto;
 }
 
-.caption textarea{
+.comment-form{
 	display: none;
+}
+
+.comment-box{
+	position: relative;
+}
+.comment-box a{
+	top: 0;
 }
