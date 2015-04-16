@@ -10,18 +10,32 @@
 	?>
 
 </head>
-	<body>
-		<section class='page-header'>
-			<div class="row">
-				<div class="col-md-6 text-center">
-					<h1 text-align="center">Gif Cabinet <small><em>Prototype</em></small></h1>
-				</div>
-				<div class="col-md-6 text-center">
-					<img src="<?php echo $config['paths']['resources'] . '/images/cabinet.png' ?>" width="15%" height="15%">
-				</div>
+<body>
+	<section class='page-header'>
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<h1 text-align="center">Gif Cabinet <small><em>Prototype</em></small></h1>
 			</div>
-		</section>
+			<div class="col-md-6 text-center">
+				<img src="<?php echo $config['paths']['resources'] . '/images/cabinet.png' ?>" width="15%" height="15%">
+			</div>
+		</div>
+	</section>
 
+	<section class="container about">
+		<div class="row">
+			<div class="wrapper">
+				<h2 class="col-md-12 about-details"> What is GIF Cabinet? </h2>
+				<p class="col-md-12 about-details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</div>
+	</section>
 
 	<section class='home-main'>
 		<div class="container">
@@ -41,12 +55,12 @@
 			}
 			?>
 		</div>
-	<section>
-	</body>
+		<section>
+		</body>
 
-	<script>
-		$('.comment-button').click(function(){
-			$(this).parent().next('textarea').toggle();
-		})
-	</script>
-</html>
+		<script>
+			$('.comment-button').click(function(){
+				$(this).parent().next('textarea').toggle();
+			})
+		</script>
+		</html>
