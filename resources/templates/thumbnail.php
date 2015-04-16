@@ -1,7 +1,14 @@
-<div class="img-responsive img-thumbnail col-sm-12 col-md-4">
+<?php
+		$tags = array("open", "closed", "rejected", "accepted");
+		$tag = $tags[array_rand($tags)];
+?>
+<div class="img-responsive img-thumbnail col-sm-12 col-md-4 <?php echo($tag);?>">
 	<img class='gif-image' src="../resources/images/1407801019670.gif">
 	<div class="caption">
-		<h3> GIF Label  <small>&bull; Category</small></h3>
+		<h3> GIF Label  <small>&bull; <?php 
+		// for testing filter... needs to be dynamic
+		echo (ucfirst($tag)."</small></h3>");
+		?>
 		<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 		<p>
 			<a href="#" class="btn btn-primary" role="button">Resolve</a> 

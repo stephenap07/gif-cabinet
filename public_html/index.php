@@ -52,25 +52,36 @@
 					?>
 				</div>
 			</div>
-
-
-			<?php
-			$numInRow = 0;
-			for ($x = 0; $x <= 5; $x++) {
-				if ($numInRow == 0){
-					echo("<div class='container-fluid'>");
-					echo("<div class='row gif-row'>");
-				}
-				include(TEMPLATES_PATH . '/thumbnail.php');
-				$numInRow++;
-				if ($numInRow == 3){
-					echo("</div>");
-					echo("</div>");
-					$numInRow = 0;
-				}
-			}
-			?>
 		</div>
+
+			<div class='gif-filter'>
+				<select class='form-control'>
+					<option value='view_all'>View All</option>
+					<option value='open'>Open</option>
+					<option value='rejected'>Rejected</option>
+					<option value='closed'>Closed</option>
+					<option value='accepted'>Accepted</option>
+				</select>
+			</div>
+
+			<div class='gifs'>
+				<?php
+				$numInRow = 0;
+				for ($x = 0; $x <= 5; $x++) {
+					if ($numInRow == 0){
+						echo("<div class='container-fluid'>");
+						echo("<div class='row gif-row'>");
+					}
+					include(TEMPLATES_PATH . '/thumbnail.php');
+					$numInRow++;
+					if ($numInRow == 3){
+						echo("</div>");
+						echo("</div>");
+						$numInRow = 0;
+					}
+				}
+				?>
+			</div>
 		<section>
 		</body>
 
