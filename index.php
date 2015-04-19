@@ -3,10 +3,10 @@
 <head>
 	<title>Group Project Prototype</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../resources/styles/application.css">
+	<link rel="stylesheet" href="resources/styles/application.css">
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<?php
-	require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+	require_once(realpath("resources/config.php"));
 	?>
 
 </head>
@@ -86,6 +86,6 @@
 		<section>
 		</body>
 
-		<script src='../resources/scripts/thumbnails.js'></script>
+		<script src="<?php echo $config['paths']['resources'] . 'scripts/thumbnails.js'; ?>"></script>
 
 		</html>

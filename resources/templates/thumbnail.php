@@ -3,7 +3,7 @@
 		$tag = $tags[array_rand($tags)];
 ?>
 <div class="img-responsive img-thumbnail col-sm-12 col-md-4 <?php echo($tag);?>">
-	<img class='gif-image' src="../resources/images/1407801019670.gif">
+	<img class='gif-image' src=<?php echo $config['paths']['resources'] . '/images/1407801019670.gif' ?>>
 	<div class="caption">
 		<h3> GIF Label  <small>&bull; <?php 
 		// for testing filter... needs to be dynamic
