@@ -46,6 +46,7 @@
 					include(TEMPLATES_PATH . '/form_upload.php');
 					?>
 				</div>
+				<div class='preview'></div>
 			</div>
 		</div>
 
@@ -82,5 +83,5 @@
 		</body>
 
 		<script src="<?php echo $config['paths']['resources'] . 'scripts/thumbnails.js'; ?>"></script>
-
+	
 		</html>
