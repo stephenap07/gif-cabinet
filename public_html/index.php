@@ -39,9 +39,11 @@
 			</div>
 		</div>
 	</section>
-
+	<div class='row home-main'>
+		<button class='col-md-2 col-md-offset-5 btn btn-default new-issue'>New Issue</button>
+	</div>
 	<section class='home-main'>
-		<div class="container-fluid">
+		<div class="container-fluid form-upload">
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4">
 					<?php
@@ -85,18 +87,4 @@
 		</body>
 
 		<script src="<?php echo $config['paths']['resources'] . 'scripts/thumbnails.js'; ?>"></script>
-		<script>
-			$(function(){
-				$('.grid-filter').change(function(){
-					$.ajax({
-						url: 'grid-query.php',
-						data: { 'status': $(this).val() },
-						success: function(data, success){
-							$('.gifs').html(data);
-						}
-					})
-				})
-			})
-		</script>
-
 		</html>
