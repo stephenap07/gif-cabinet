@@ -1,5 +1,5 @@
 <?php
- 
+
 $config = array (
 	"db" => array (
 		"dbname" => "group1",
@@ -8,12 +8,12 @@ $config = array (
 		"host" => "127.0.0.1:3306"
 	),
     "paths" => array (
-        "resources" => "../resources",
+        "resources" => "resources/",
         "images" => array (
             "content" => $_SERVER["DOCUMENT_ROOT"] . "/images/content",
             "layout" => $_SERVER["DOCUMENT_ROOT"] . "/images/layout"
         ),
-	"uploads" => "../uploads"
+	"uploads" => "uploads/"
     )
 );
  
@@ -25,4 +25,11 @@ defined("TEMPLATES_PATH")
 
 ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
+
+
+function include_javascript($script) {
+	echo $config['paths']['resources'] . 'scripts/' . $script;
+}
+
+
 ?>

@@ -3,20 +3,15 @@
 <head>
 	<title>Group Project Prototype</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../resources/styles/application.css">
+	<link rel="stylesheet" href="resources/styles/application.css">
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<?php
-	require_once(realpath(dirname(__FILE__) . "/../resources/config.php"));
+	require_once(realpath("resources/config.php"));
 	?>
 
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	  	<strong><i> GC </i></strong>
-    	<a href='#' class='btn btn-primary'>Sign In</a>
-	  </div>
-	</nav>
+	<?php include('header.html');?>
 	<section class='page-header container-fluid'>
 		<div class="row">
 			<div class="col-md-6 text-center">
@@ -51,11 +46,12 @@
 					include(TEMPLATES_PATH . '/form_upload.php');
 					?>
 				</div>
+				<div class='preview'></div>
 			</div>
 		</div>
 
 			<div class='gif-filter'>
-				<select class='form-control'>
+				<select class='form-control grid-filter'>
 					<option value='view_all'>View All</option>
 					<option value='open'>Open</option>
 					<option value='rejected'>Rejected</option>
@@ -86,6 +82,20 @@
 		<section>
 		</body>
 
-		<script src='../resources/scripts/thumbnails.js'></script>
+		<script src="<?php echo $config['paths']['resources'] . 'scripts/thumbnails.js'; ?>"></script>
+		<script>
+			$(function(){
+				$('.grid-filter').change(function(){
+					$.ajax({
+						url: 'grid-query.php',
+						data: { 'status': $(this).val() },
+						success: function(data, success){
+							$('.gifs').html(data);
+						}
+					})
 
+				})
+			})
+		</script>
+	
 		</html>
