@@ -21,6 +21,7 @@
 .gif-image{
 	display: flex;
 	margin: 0 auto;
+	max-width: 100%;
 }
 
 .comment-form{
