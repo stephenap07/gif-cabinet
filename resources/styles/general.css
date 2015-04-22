@@ -24,6 +24,13 @@
 	margin-top: 15px;
 }
 
-.about-details{
 
+.form-upload{
+	height: 10px;
+	overflow: hidden;
+}
+
+.new-issue{
+	margin-top: 10px;
+	margin-bottom: 10px;
 }

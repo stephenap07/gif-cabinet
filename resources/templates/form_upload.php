@@ -17,11 +17,18 @@
 			};
 
 		</script>
+		<a href='#formScroll' id='form-scroll' style='display:none;'></a>
 		<p class='help-block'>Upload an image that shows the issue happening</p>
 	</div>
 	<div class="form-group">
 		<label for="issue-upload">What is the issue?</label>
 		<textarea class='form-control' name='issue-upload' id='issue-upload'></textarea>
 	</div> 
+	<div class="form-group">
+	<label for="author-name">Author</label>
+		<input type='text' class='form-control'></input>
+	
+	</div>
 	<button class="btn btn-primary" type="submit" name="submit">Submit</button>
+	<button class="btn btn-default cancel-upload" name="cancel">Cancel</button>
 </form>
