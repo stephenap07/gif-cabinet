@@ -51,7 +51,7 @@
 		</div>
 
 			<div class='gif-filter'>
-				<select class='form-control'>
+				<select class='form-control grid-filter'>
 					<option value='view_all'>View All</option>
 					<option value='open'>Open</option>
 					<option value='rejected'>Rejected</option>
@@ -83,5 +83,19 @@
 		</body>
 
 		<script src="<?php echo $config['paths']['resources'] . 'scripts/thumbnails.js'; ?>"></script>
+		<script>
+			$(function(){
+				$('.grid-filter').change(function(){
+					$.ajax({
+						url: 'grid-query.php',
+						data: { 'status': $(this).val() },
+						success: function(data, success){
+							$('.gifs').html(data);
+						}
+					})
+
+				})
+			})
+		</script>
 	
 		</html>
