@@ -5,7 +5,7 @@ $config = array (
 		"dbname" => "group1",
 		"username" => "group1",
 		"password" => "cop1group1",
-		"host" => "127.0.0.1:3306"
+		"host" => "localhost"
 	),
     "paths" => array (
         "resources" => "resources/",
@@ -25,11 +25,5 @@ defined("TEMPLATES_PATH")
 
 ini_set("error_reporting", "true");
 error_reporting(E_ALL|E_STRCT);
-
-
-function include_javascript($script) {
-	echo $config['paths']['resources'] . 'scripts/' . $script;
-}
-
 
 ?>

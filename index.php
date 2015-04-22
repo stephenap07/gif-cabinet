@@ -1,3 +1,6 @@
+<?php
+	require('../app/common.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +11,9 @@
 	<?php
 	require_once(realpath("resources/config.php"));
 	?>
-
 </head>
 <body>
-	<?php include('header.html');?>
+	<?php include('header.php');?>
 	<section class='page-header container-fluid'>
 		<div class="row">
 			<div class="col-md-6 text-center">
@@ -93,9 +95,8 @@
 							$('.gifs').html(data);
 						}
 					})
-
 				})
 			})
 		</script>
-	
+
 		</html>

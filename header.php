@@ -7,7 +7,13 @@
 		</div>
 		<ul class='nav navbar-nav navbar-right'>
 			<li>
-				<a href='#'>Sign In</a>
+				<?php
+					if (!isLoggedIn()) {
+						echo "<a href='login.php'>Sign In</a>";
+					} else {
+						echo "<a href='logout.php'>Logout</a>";
+					}
+				?>
 			</li>
 		</ul>
 	</div>

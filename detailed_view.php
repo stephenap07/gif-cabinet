@@ -1,3 +1,7 @@
+<?php
+	require('../app/private.php');
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -12,7 +16,7 @@
 	<?php
 	$tags = array("open", "closed", "rejected", "accepted");
 	$tag = $tags[array_rand($tags)];
-	include('header.html');?>
+	include('header.php');?>
 
 	<section class='gif-detail container-fluid'>
 		<h2> Some Gif </h2>
