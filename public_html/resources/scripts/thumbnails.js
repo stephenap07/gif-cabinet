@@ -11,7 +11,7 @@ $('.cancel-comment').click(function(e){
 
 $('.grid-filter').change(function(){
 	$.ajax({
-		url: 'grid-query.php',
+		url: 'grid_query.php',
 		data: { 'status': $(this).val() },
 		success: function(data, success){
 			$('.gifs').html(data);

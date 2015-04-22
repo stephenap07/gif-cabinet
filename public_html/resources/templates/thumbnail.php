@@ -1,8 +1,4 @@
-<?php
-		$tags = array("open", "closed", "rejected", "accepted");
-		$tag = $tags[array_rand($tags)];
-?>
-<div class="img-responsive img-thumbnail col-sm-12 col-md-4 <?php echo($tag);?>">
+<div class="img-responsive img-thumbnail col-sm-12 col-md-4 <?php echo($issue->tag());?>">
 	<a href='<?php echo "detailed_view.php?id=" . $issue->id()  ?>'>
 		<img class='gif-image' src=<?php echo $issue->imagePath() ?>>
 	</a>

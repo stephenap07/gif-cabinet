@@ -83,5 +83,11 @@
 			$sql = "SELECT * FROM Issue";
 			return $this->db->query($sql);
 		}
+
+		function queryByTag($tag) {
+			$sql = "SELECT * FROM Issue where tag='"
+				. $this->db->sanitize($tag) . "'";
+			return $this->db->query($sql);
+		}
 	}
 ?>
