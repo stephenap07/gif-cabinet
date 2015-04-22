@@ -18,28 +18,36 @@
 		private $_tag;
 		private $_author;
 		private $_description;
+		private $_id;
+		private $_queryData;
 
-		function __construct($imagePath, $tag, $author, $description) {
-			$this->_imagePath = $imagePath;
-			$this->_tag = $tag;
-			$this->_author = $author;
-			$this->_description = $description;
+		function __construct($queryData) {
+			$this->_queryData = $queryData->fetch_assoc();
+			$this->_imagePath = $this->_queryData['image_path'];
+			$this->_tag = $this->_queryData['tag'];
+			$this->_author = $this->_queryData['author'];
+			$this->_description = $this->_queryData['description'];
+			$this->_id = $this->_queryData['issue_id'];
 		}
 		
 		public function imagePath() {
-			return $this->_imagePath;
+			return htmlentities($this->_imagePath);
 		}
 
 		public function tag() {
-			return $this->_tag;
+			return htmlentities($this->_tag);
 		}
 
 		public function author() {
-			return $this->_author;
+			return htmlentities($this->_author);
 		}
 
 		public function description() {
-			return $this->_description;
+			return htmlentities($this->_description);
+		}
+
+		public function id() {
+			return htmlentities($this->_id);
 		}
 	};
 
@@ -69,6 +77,11 @@
 		
 		function error() {
 			return $this->db->error();
+		}
+
+		function all() {
+			$sql = "SELECT * FROM Issue";
+			return $this->db->query($sql);
 		}
 	}
 ?>

@@ -66,9 +66,13 @@
 
 			<div class='gifs'>
 				<?php
+				require('../app/issue.php');
+				$profileManager = new IssueManager();
+				$result = $profileManager->all();
 				$numInRow = 0;
-				$max = 6;
-				for ($x = 0; $x <= $max; $x++) {
+				$max = $result->num_rows;
+				for ($x = 0; $x < $max; $x++) {
+					$issue = new Issue($result);
 					if ($numInRow == 0){
 						echo("<div class='container-fluid'>");
 						echo("<div class='row gif-row'>");

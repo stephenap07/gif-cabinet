@@ -3,15 +3,15 @@
 		$tag = $tags[array_rand($tags)];
 ?>
 <div class="img-responsive img-thumbnail col-sm-12 col-md-4 <?php echo($tag);?>">
-	<a href='detailed_view.php'>
-		<img class='gif-image' src=<?php echo $config['paths']['resources'] . '/images/1407801019670.gif' ?>>
+	<a href='<?php echo "detailed_view.php?id=" . $issue->id()  ?>'>
+		<img class='gif-image' src=<?php echo $issue->imagePath() ?>>
 	</a>
 	<div class="caption">
 		<h3> GIF Label  <small>&bull; <?php 
 		// for testing filter... needs to be dynamic
-		echo (ucfirst($tag)."</small></h3>");
+		echo (ucfirst($issue->tag())."</small></h3>");
 		?>
-		<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+		<p><?php echo $issue->description(); ?></p>
 		<p>
 			<a href="#" class="btn btn-primary" role="button">Resolve</a> 
 			<button class="btn btn-default comment-button" role="button">Comment</button>
