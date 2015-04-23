@@ -1,4 +1,25 @@
 <?php
+	require('../app/issue.php');	
+
+	$hasValidID = false;
+	$issue;
+	$tag;
+
+	if (!empty($_GET)) {
+		if (!empty($_GET['id'])) {
+			$issueManager = new IssueManager();
+			$result = $issueManager->queryByID($_GET['id']);
+			$issue = new Issue($result);
+			$tag = $issue->tag();
+			$hasValidID = true;
+		}
+	}
+
+	if (!$hasValidID) {
+		header('Location: index.php');
+		die();
+	}
+
 	require('../app/private.php');
 ?>
 
@@ -14,24 +35,26 @@
 </head>
 <body>
 	<?php
-	$tags = array("open", "closed", "rejected", "accepted");
-	$tag = $tags[array_rand($tags)];
 	include('header.php');?>
 
 	<section class='gif-detail container-fluid'>
 		<h2> Some Gif </h2>
-		<div class="img-responsive img-thumbnail col-md-12 <?php echo($tag);?>">
-			<img class='gif-image' src="resources/images/1407801019670.gif">
+		<div class="img-responsive img-thumbnail col-md-12 <?php $tag; ?>">
+			<img class='gif-image' src="<?php echo $issue->imagePath(); ?>">
 			<div class='col-md-12 show-buttons'>
-				<button class='btn btn-success'>Accept</button>
-				<button class='btn btn-danger'>Reject</button>
+				<?php
+					if (strcmp($tag, 'open') == 0) {
+						echo "<button class='btn btn-success'>Accept</button>"
+							. "<button class='btn btn-danger'>Reject</button>";
+					}
+				?>
 			</div>
 			<div class="caption col-md-12">
 				<h3><?php 
 		// for testing filter... needs to be dynamic
 					echo (ucfirst($tag)."</h3>");
 					?>
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+					<p><?php echo $issue->description(); ?></p>
 					<p>
 						<button class="btn btn-default comment-button" role="button">Comment</button>
 					</p>
@@ -46,8 +69,17 @@
 						</div>
 					</form>
 					<ul class='comments'>
-						<li class='comment'>Comment 1...</li>
-						<li class='comment'> Comment 2.. </li>
+						<?php
+							require('../app/comment.php');
+							$commentManager = new CommentManager();
+							$result = $commentManager->queryByIssue($issue->id());
+
+							$numRows = $result->num_rows;
+							for ($i = 0; $i < $numRows; $i++) {
+								$comment = new Comment($result);
+								echo "<li class='comment'>" . $comment->message(). "</li>";
+							}
+						?>
 					</ul>
 				</div>
 
