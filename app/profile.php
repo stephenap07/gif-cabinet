@@ -25,7 +25,7 @@
 		}
 		
 		public function username() {
-			return $this->_username;
+			return htmlentities($this->_username);
 		}
 
 		public function password() {

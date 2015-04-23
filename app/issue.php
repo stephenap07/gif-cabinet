@@ -18,6 +18,7 @@
 		private $_tag;
 		private $_author;
 		private $_description;
+		private $_commentCount;
 		private $_id;
 		private $_queryData;
 
@@ -28,6 +29,12 @@
 			$this->_author = $this->_queryData['author'];
 			$this->_description = $this->_queryData['description'];
 			$this->_id = $this->_queryData['issue_id'];
+
+			if (isset($this->_queryData['comment_count'])) {
+				$this->_commentCount = $this->_queryData['comment_count'];
+			} else {
+				$this->_commentCount = -1;
+			}
 		}
 		
 		public function imagePath() {
@@ -44,6 +51,10 @@
 
 		public function description() {
 			return htmlentities($this->_description);
+		}
+
+		public function commentCount() {
+			return $this->_commentCount;
 		}
 
 		public function id() {
@@ -63,13 +74,14 @@
 			$this->db->close();
 		}
 
-		function insertNew($aImagePath, $aTag, $aAuthor, $aDescription) {
-			$sql = "INSERT INTO Issue (image_path, tag, author, description)
+		function insertNew($aImagePath, $aTag, $aAuthor, $aDescription, $aProfileID) {
+			$sql = "INSERT INTO Issue (image_path, tag, author, description, profile_id)
 				VALUES ("
 				. "'" . $this->db->sanitize($aImagePath) . "', "
 				. "'" . $this->db->sanitize($aTag) . "', "
 				. "'" . $this->db->sanitize($aAuthor) . "', "
-				. "'" . $this->db->sanitize($aDescription) . "'"
+				. "'" . $this->db->sanitize($aDescription) . "', "
+				. "'" . $this->db->sanitize($aProfileID) . "'"
 				. ")";
 
 			return $this->db->query($sql);
@@ -80,13 +92,25 @@
 		}
 
 		function all() {
-			$sql = "SELECT * FROM Issue";
+			// Here's our join
+			$sql = "SELECT Issue.issue_id, image_path, tag, author, description,
+				Issue.profile_id, COUNT(comment_id) as comment_count
+				FROM Issue
+				LEFT JOIN Comment on Issue.issue_id = Comment.issue_id
+				GROUP BY Issue.issue_id";
+			       
 			return $this->db->query($sql);
 		}
 
 		function queryByTag($tag) {
 			$sql = "SELECT * FROM Issue where tag='"
 				. $this->db->sanitize($tag) . "'";
+			return $this->db->query($sql);
+		}
+
+		function queryByID($id) {
+			$sql = "SELECT * FROM Issue where issue_id='"
+				. $this->db->sanitize($id) . "'";
 			return $this->db->query($sql);
 		}
 	}

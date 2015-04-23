@@ -28,6 +28,10 @@
 		} else {
 			die ('Failed to insert new profile');
 		}
+
+		header("Location: login.php"); 
+		
+		die();
 	}
 ?>
 
